@@ -9,25 +9,20 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                
-                    @foreach ($owners as $owner)
-                            {{ $owner->name }}
-                            {{ $owner->email }}
-                            {{ $owner->created_at->diffForHumans() }}
+                    エロクアント
+                    @foreach  ($e_all as $e_owner)
+                        {{ $e_owner->name }}
+                        {{ $e_owner->created_at }}
                     @endforeach
 
-                        <!-- {{-- エロクアント
-                        @foreach ($e_all as $e_owner)
-                            {{ $e_owner->name }}
-                            {{ $e_owner->created_at }}
-                        @endforeach
+                    <br>
+                    クエリビルダ
+                    @foreach ($q_get as $q_owner)
+                        {{ $q_owner->name }}
+                        {{ $q_owner->created_at->diffForHumans() }}
+                    @endforeach
 
-                        <br>
-                        クエリビルダ
-                        @foreach ($q_get as $q_owner)
-                                {{ $q_owner->name }}
-                                {{ $q_owner->created_at }}
-                        @endforeach --}} -->
+
                 </div>
             </div>
         </div>

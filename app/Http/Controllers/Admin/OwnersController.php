@@ -28,11 +28,11 @@ class OwnersController extends Controller
     public function index()
     {
         $date_now = Carbon::now();
-        $date_pase = Carbon::parse(now());
+        $date_parse = Carbon::parse(now());
         $e_all = owner::all();
 
         echo  $date_now;
-        echo  $date_pase;
+        echo  $date_parse;
 
 
         $q_get = DB::table('owners')->select('name','created_at')->get();
@@ -45,7 +45,7 @@ class OwnersController extends Controller
         // var_dump('$q_first');
         // dd($e_all, $q_get, $q_first, $c_test);
 
-        return view('admin,owners.index',
+        return view('admin.owners.index',
         compact('e_all','q_get'));
     }
 
