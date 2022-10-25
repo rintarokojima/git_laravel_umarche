@@ -24,7 +24,6 @@ class Authenticate extends Middleware
                 return route($this->owner_route);
             }elseif(Route::is('admin.*')){
                 return route($this->admin_route);
-
             }else{
                 return route($this->user_route);
             }
