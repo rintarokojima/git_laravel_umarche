@@ -12,6 +12,10 @@
 
                     <section class="text-gray-600 body-font">
   <div class="container px-5  mx-auto">
+    <div class="flex justify-end m-4">
+      <button onclick="location.href='{{route('admin.owners.create')}}'"class=" text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">新規登録する</button>
+    </div>
+
     <div class="flex flex-col text-center w-full mb-20">
       
     <div class="lg:w-2/3 w-full mx-auto overflow-auto">
