@@ -30,8 +30,8 @@ Route::get('/', function () {
 Route::prefix('shops')->
 middleware('auth:owners')->group(function(){
 Route::get('index', [ShopController::class,'index'])->name('shops.index');
-Route::post('get/{edit/{shop}',[ShopController::class, 'edit'])->name('shops.edit'); 
-Route::post('get/{shop/{shop}',[ShopController::class, 'update'])->name('shops.update'); 
+Route::get('edit/{shop}',[ShopController::class, 'edit'])->name('shops.edit'); 
+Route::post('update/{shop}',[ShopController::class, 'update'])->name('shops.update'); 
 });
 
 Route::get('/dashboard', function () {
