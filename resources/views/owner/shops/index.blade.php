@@ -35,31 +35,3 @@
         </div>
     </div>
 </x-app-layout>
-
-
-
-
-
-
-
-                   <!-- @foreach ($shops as $shop)
-                        <a href="{{route('owner.shops.edit',['shop' => $shops->id ])}}">
-                        <div class="border rounded-md p-4">
-                            <div class="mb-4">
-                            @if($shop->is_selling)
-                            <span class="border p-2 rounded-md bg-blue-400 text-white">販売中</span>
-                            @else
-                            <span class="border p-2 rounded-md bg-red-400 text-white">停止中</span>
-                            @endif
-                        </div>
-                        <div class="text-xl">{{ $shop->name }}</div>
-                            </div>
-                                @if(empty($shop->filename))
-                                <img src="{{asset('images/no_image.jpg')}}">
-                                @else
-                                <img src="{{ asset('stronge/shops/'. $shop->filename)}}">
-                                @endif
-                            </div>
-                        </div>
-                      </a>
-                    @endforeach -->
