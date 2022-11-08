@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; 
 use App\Models\Shop;
 use Illuminate\Support\Facades\Storage; 
+use InterventionImage; 
 
 class ShopController extends Controller
 {
@@ -33,6 +34,7 @@ class ShopController extends Controller
 
     public function index()
     {
+        
         // $ownerId = Auth::id();
         $shops = Shop::where('owner_id', Auth::id())->get(); 
 
@@ -46,24 +48,46 @@ class ShopController extends Controller
         $shop = Shop::findOrFail($id);
 
         return view('owner.shops.edit',compact('shop'));
-        // dd(Shop::findOrFail($id));
-        // $owner = Owner::findOrFail($id);
+
         
-        // return view('admin.owners.edit', compact('owner'));
+        // dd(Shop::findOrFail($id));
+        
     }
 
     public function update(Request $request, $id)
     {
+        $request->validate([
 
-        $imageFile = $request->image; 
+            'name' => 'required|string|max:50',
+            'information' => 'required|string|max:1000',
+            'is_selling' => 'required',
+
+        ]);
+
+
+        $imageFile = $request->image; //一時保存
         if(!is_null($imageFile) && $imageFile->isValid() ){
         Storage::putFile('public/shops', $imageFile);
+        } 
+
+
+        $shop = Shop::findOrFail($id);
+        $shop->name = $request->name;
+        $shop->information = $request->information;
+        $shop->is_selling = $request->is_selling;
+    
+        if(!is_null($imageFile) && $imageFile->isValid()){
+            $shop->filename = $imageFile;
         }
-
-        return redirect()->route('owner.shops.index');
-
+    
+        $shop->save();
+    
+        return redirect()
+        ->route('owner.shops.index')
+        ->with(['message' => '店舗情報を更新しました。',
+        'status' => 'info']);
 
     }
 
-
+    
 }
