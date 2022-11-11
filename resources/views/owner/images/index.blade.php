@@ -18,7 +18,7 @@
                       <a href="{{route('owner.image.edit',['image' => $image->id ])}}">
                       <div class="border rounded-md p-4">
                         <div class="text-xl">{{ $image->title }}</div>
-                        <x-thumbnail :filename="$shop->filename" type="products" />
+                        <x-thumbnail :filename="$shop->filename" type="products"/>
                        </div>
                      </a>
                     </div>    

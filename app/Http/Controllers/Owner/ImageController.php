@@ -62,9 +62,9 @@ class ImageController extends Controller
     public function store(UploadImageRequest $request)
     {
         $imageFiles = $request->file('files');
-        if(!is_null('$imageFiles')){
+        if(!is_null($imageFiles)){
             foreach($imageFiles as $imageFile){
-                $fileNameToStore = ImageService::upload($imageFile,'puroducts');
+                $fileNameToStore = ImageService::upload($imageFile,'products');
                 Image::create([
                     'owner_id'=> Auth::id(),
                     'filename'=> $fileNameToStore
