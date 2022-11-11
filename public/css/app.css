@@ -696,6 +696,9 @@ select {
 .m-8 {
   margin: 2rem;
 }
+.m-10 {
+  margin: 2.5rem;
+}
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -774,6 +777,12 @@ select {
 }
 .mb-8 {
   margin-bottom: 2rem;
+}
+.ml-8 {
+  margin-left: 2rem;
+}
+.mr-8 {
+  margin-right: 2rem;
 }
 .block {
   display: block;
@@ -1247,6 +1256,12 @@ select {
 .pr-8 {
   padding-right: 2rem;
 }
+.pr-2 {
+  padding-right: 0.5rem;
+}
+.pr-40 {
+  padding-right: 10rem;
+}
 .text-left {
   text-align: left;
 }
@@ -1696,7 +1711,7 @@ select {
   }
 
   .sm\:ml-6 {
-    margin-left: 1.5rem;
+    margin-left: 50rem;
   }
 
   .sm\:block {
