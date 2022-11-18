@@ -11,6 +11,8 @@ use App\Http\Controllers\Owner\Auth\RegisteredUserController;
 use App\Http\Controllers\Owner\Auth\VerifyEmailController;
 use App\Http\Controllers\Owner\ShopController;
 use App\Http\Controllers\Owner\ImageController;
+use App\Http\Controllers\Owner\ProductController;
+
 
 
 /*Owner
@@ -36,6 +38,9 @@ Route::post('update/{shop}',[ShopController::class, 'update'])->name('shops.upda
 });
 
 Route::resource('images',ImageController::Class)
+->middleware('auth:owners')->except(['show']);
+
+Route::resource('products',ProductController::Class)
 ->middleware('auth:owners')->except(['show']);
 
 Route::get('/dashboard', function () {

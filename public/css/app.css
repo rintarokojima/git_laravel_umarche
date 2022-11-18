@@ -715,6 +715,10 @@ select {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -783,6 +787,9 @@ select {
 }
 .mr-8 {
   margin-right: 2rem;
+}
+.mt-32 {
+  margin-top: 8rem;
 }
 .block {
   display: block;
@@ -1711,7 +1718,7 @@ select {
   }
 
   .sm\:ml-6 {
-    margin-left: 50rem;
+    margin-left: 1.5rem;
   }
 
   .sm\:block {
@@ -1826,6 +1833,10 @@ select {
 
   .md\:p-6 {
     padding: 1.5rem;
+  }
+
+  .md\:p-4 {
+    padding: 1rem;
   }
 
   .md\:px-5 {
