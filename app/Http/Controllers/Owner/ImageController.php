@@ -111,6 +111,7 @@ class ImageController extends Controller
     public function destroy($id)
     {
         $image = Image::findOrFail($id);
+        
 
         $imageInProducts = Product::where('image1',$image->id)
         ->orwhere('image2',$image->id)
@@ -119,7 +120,7 @@ class ImageController extends Controller
         ->get();
 
         if($imageInProducts){
-            $imegeInProducts->each(function($product) use($image){
+            $imageInProducts->each(function($product) use($image){
                 if($product->image1 === $image->id){
                     $product->image1 = null;
                     $product->save();

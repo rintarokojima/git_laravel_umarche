@@ -31,8 +31,4 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
 </x-app-layout>
-=======
-</x-app-layout>
->>>>>>> 9823925edf425a9f9c2e892ea35fd87bf9db7c33
