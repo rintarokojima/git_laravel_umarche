@@ -10,20 +10,22 @@
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
-        <!-- Scripts -->
-        <link rel="stylesheet" href="{{asset('css/app.css')}}">
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-        <script src="{{ asset('js/app/.js') }}" defer></script>
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
-            @if(auth('admin')->user())
-              @include('layouts.admin-navigation')
-            @elseif(auth('owners')->user())
-              @include('layouts.owner-navigation')
-            @elseif(auth('users')->user())
-              @include('layouts.user-navigation')
+            @if(request()->is('admin*'))
+                @include('layouts.admin-navigation')
+            @elseif(request()->is('owner*'))
+                @include('layouts.owner-navigation')
+            @else
+                @include('layouts.user-navigation')
             @endif
+
             <!-- Page Heading -->
             <header class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">

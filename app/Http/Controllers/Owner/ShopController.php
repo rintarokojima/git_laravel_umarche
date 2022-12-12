@@ -56,7 +56,7 @@ class ShopController extends Controller
         
     }
 
-    public function update(Request $request, $id)
+    public function update(UploadImageRequest $request, $id)
     {
         $request->validate([
 
